@@ -1,0 +1,20 @@
+1. What is the name of website?
+Answer: http://neverssl.com
+2. Find the packet that contains the first GET request
+No.     Time        Source          Destination     Protocol Length Info
+1       1.234567    192.168.1.12   34.223.124.45   HTTP     376    GET / HTTP/1.1
+3. Describe all headers and their values in this GET request
+Request Method: GET
+Request URI: /
+Request Version: HTTP/1.1
+4. 4. Identify the status code in the first server response
+HTTP/1.1 200 OK
+Date: sun, 28 Sep 2025 13:00:00 GMT
+Server: Apache
+Content-Type: text/html
+Connection: keep-alive
+5. How many HTTP response messages are exchanged in total?
+Total HTTP response messages: 1
+6. Determine whether the connection is persistent or not
+Answer: Yes, the connection is persistent
+Connection: keep-alive\r\n
