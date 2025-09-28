@@ -1,0 +1,43 @@
+1. What is the name of the website?
+
+The destination IP address is 172.217.169.208, which belongs to Google. 
+This suggests the website accessed is likely a Google service
+
+2. Find the packet that contains the Initial QUIC handshake. What information is exchanged here?
+
+The Initial QUIC handshake is in Frame 214. Key information exchanged includes:
+Packet Type: Initial (0)
+Destination Connection ID: b3e9cb19b9a67babba6f45c3b05d8c5e
+Source Connection ID: ffa7797c
+Packet Length: 945 bytes
+Payload Length: 917 bytes
+Encrypted Data: Contains the TLS ClientHello message
+
+3. Identify the QUIC packet that contains the TLS ClientHello.
+
+Also in Frame 214, the TLSv1.3 Record Layer Handshake Protocol Client
+Hello is embedded within the QUIC Initial packet. This is part of QUIC's 
+design to integrate TLS directly into its transport layer.
+
+4. Which QUIC version is used in your trace?
+
+The image does not explicitly show the QUIC version field. However, since it includes TLS 1.3
+and uses the Long Header with Initial Packet Type, it is consistent with IETF QUIC version 1.
+
+5. Locate the packet where 0-RTT or 1-RTT keys are first used.
+
+The image does not show the full trace, but typically:
+0-RTT is used when a client resumes a previous session.
+1-RTT is used after the handshake completes.
+Since this is an Initial packet with ClientHello, the 1-RTT keys would be used in subsequent
+packets after the handshake completes. You would need to look for packets labeled as Short 
+Header with encrypted application data to identify this.
+
+6. Find the first packet that carries application data (HTTP/3). How does this differ from HTTP over TCP?
+
+first HTTP/3 packet would be a Short Header QUIC packet carrying encrypted application data.
+Difference from HTTP over TCP:
+QUIC uses UDP, not TCP.
+QUIC integrates TLS 1.3 directly into the protocol.
+QUIC supports multiplexing without head-of-line blocking.
+QUIC enables faster connection establishment with 0-RTT and 1-RTT.
