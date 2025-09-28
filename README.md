@@ -2,7 +2,7 @@
 
 B23FAI-Green 
 
-Member 1: Syed Usman Ali 
+Member 1: Syed Usman Ali (submiting the assignment)
 Reg no: B23F1000AI206
 
 Member 2: Muhammad Maaz Jadoon
