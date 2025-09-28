@@ -1,0 +1,67 @@
+7. What is the name of website?
+
+Answer: https://www.wikipedia.org
+
+8. Find the ClientHello message packet
+
+Content Type: Handshake (22)
+TLS Version: 1.2 (0x0303)
+Length: 1897 bytes
+
+9. List TLS extensions in ClientHello for Wikipedia
+
+TLS Extensions in ClientHello:
+- server_name (0): www.wikipedia.org
+- extended_master_secret (len=0)
+- renegotiation_info (len=1)
+- supported_groups (len=16)
+- ec_point_formats (len=16)
+- session_ticket (len=0)
+- application_layer_protocol_negotiation (len=0)
+- status_request (len=5)
+- signature_algorithms (len=24)
+- signed_certificate_timestamp (len=0)
+- Extension: key_share (len=1327) X25519MLKEM768, x25519, secp256r1
+- psk_key_exchange_modes (len=2)
+- Extension: supported_versions (len=5) TLS 1.3, TLS 1.2
+
+10. ServerHello message and cipher suite for Wikipedia
+
+Handshake Type: Server Hello (2)
+Length: 183
+Cipher Suite: TLS_CHACHA20_POLY1305_SHA256 (0x1303)
+Cipher Suite: TLS_CHACHA20_POLY1305_SHA256 (0x1303)
+Cipher Suite: TLS_AES_256_GCM_SHA384 (0x1302)
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
+Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 (0xcca9)
+Cipher Suite: TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (0xcca8)
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 (0xc02c)
+Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009)
+Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)
+Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
+Cipher Suite: TLS_RSA_WITH_AES_128_GCM_SHA256 (0x009c)
+Cipher Suite: TLS_RSA_WITH_AES_256_GCM_SHA384 (0x009d)
+Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
+Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
+
+11. Certificate information for Wikipedia
+
+Handshake Protocol: Certificate
+Handshake Type: Certificate (11)
+Length: 3945
+Certificates Length: 3942
+Certificate Length: 2480
+Certificate […]: 308209ac30820794a00302010202133302006d168406416852d3b639000002006d16300d06092a864886f70d01010c0500305d310b3009060355040613025553311e301c060355040a13154d6963726f736f667420436f72706f726174696f6e312e302c060355040313254d6963
+Certificate Length: 1456
+Certificate […]: 308205ac30820494a00302010202100efb7e547edf0ff1069aee57696d7ba0300d06092a864886f70d01010c05003061310b300906035504061302555331153013060355040a130c446967694365727420496e6331193017060355040b13107777772e64696769636572742e636f
+
+12. First encrypted application data packet
+
+Content Type: Application Data (23)
+Version: TLS 1.2 (0x0303)
+Length: 35
+Encrypted Application Data: 0a10499a1d474469ffb3e110b9580cada92b0f8ad0bb2fb69729729302ef2b9f3574d5
+[Application Data Protocol: Hypertext Transfer Protocol]
